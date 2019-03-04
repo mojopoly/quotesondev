@@ -195,11 +195,6 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
 legend {
   border: 0;
   padding: 0; }
@@ -225,14 +220,16 @@ th {
 # Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #fff;
+  font-family: Exo Web;
   font-size: 1rem;
   line-height: 1.5; }
+
+body {
+  padding-left: 1rem; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -292,7 +289,7 @@ html {
           box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: black;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote,
@@ -309,21 +306,6 @@ hr {
   height: 1px;
   margin-bottom: 1.5rem; }
 
-ul,
-ol {
-  margin: 0 0 1.5rem 3rem; }
-
-ul {
-  list-style: disc; }
-
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5rem; }
-
 dt {
   font-weight: bold; }
 
@@ -336,15 +318,18 @@ img {
   max-width: 100%;
   /* Adhere to container width. */ }
 
-table {
-  margin: 0 0 1.5rem;
-  width: 100%; }
-
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 /* Buttons */
-button,
+.front-btn, #quick-add-button {
+  color: #19c522;
+  background: transparent;
+  border: 2px solid #19c522;
+  padding: .3rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem; }
+
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -359,16 +344,13 @@ input[type="submit"] {
   line-height: 1;
   padding: .6rem 1rem .4rem;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
-  button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     border-color: #ccc #bbb #aaa;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
-  button:active, button:focus,
-  input[type="button"]:active,
-  input[type="button"]:focus,
+  input[type="button"]:active, input[type="button"]:focus,
   input[type="reset"]:active,
   input[type="reset"]:focus,
   input[type="submit"]:active,
@@ -406,15 +388,29 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+/*quick add form */
+.admin-submit-quote {
+  padding: 15px;
+  margin-bottom: 15px; }
+
+.admin-submit-quote input,
+.admin-submit-quote textarea {
+  color: #19c522;
+  background: transparent;
+  border: 2px solid #19c522;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
-  a:hover, a:focus, a:active {
+  color: #19c522; }
+  a:focus, a:active {
     color: midnightblue; }
   a:focus {
     outline: thin dotted; }
@@ -424,9 +420,16 @@ a {
 /* Menus */
 .main-navigation {
   clear: both;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   float: left;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 2rem; }
+  .main-navigation a {
+    border-right: 1px solid white;
+    padding-right: 1rem;
+    padding-left: 1rem; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -457,6 +460,41 @@ a {
   .main-navigation a {
     display: block;
     text-decoration: none; }
+
+.header-search {
+  line-height: 1;
+  width: 1rem; }
+  .header-search label {
+    float: left;
+    margin: 0; }
+  .header-search fieldset {
+    padding: 0; }
+  .header-search input[type=search] {
+    border: 0;
+    font-family: Exo Web,sans-serif;
+    padding: 0 .3rem;
+    text-transform: uppercase; }
+
+/* site title */
+.site-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.site-branding a {
+  display: block;
+  text-decoration: none; }
+
+.site-branding .site-title-1 a {
+  color: #fff; }
+
+.site-branding .site-title-2 a {
+  color: #19c522;
+  padding-left: .5rem; }
+
+.site-branding .site-title-3 a {
+  color: #fff;
+  padding-left: .5rem; }
 
 /* Small menu. */
 .menu-toggle,
@@ -570,6 +608,25 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5rem; }
+
+.archives-table {
+  padding-left: 0;
+  display: table;
+  margin: 0 auto; }
+
+.archives-cat ul {
+  padding-left: 0;
+  list-style: none; }
+
+.archives-cat li {
+  padding-left: 0;
+  display: inline; }
+
+.archives-cat {
+  padding-left: 0; }
+
+.archives-tags {
+  margin-bottom: 1rem; }
 
 /*--------------------------------------------------------------
 # Media

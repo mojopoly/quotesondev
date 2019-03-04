@@ -1,0 +1,1 @@
+C:/wamp64/www/Project5-quotes-on-dev/wordpress/wp-content/plugins/query-monitor/wp-content/db.php

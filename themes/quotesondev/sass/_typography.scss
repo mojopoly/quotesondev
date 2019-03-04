@@ -3,7 +3,6 @@
 --------------------------------------------------------------*/
 
 body,
-button,
 input,
 select,
 textarea {
@@ -11,6 +10,9 @@ textarea {
 	font-family: $font__main;
 	font-size: 1rem;
 	line-height: $font__line-height-body;
+}
+body{
+	padding-left: 1rem;
 }
 
 /* Headings */

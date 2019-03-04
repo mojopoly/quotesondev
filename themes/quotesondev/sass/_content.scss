@@ -31,3 +31,28 @@
 	clear: both;
 	margin: 0 0 $base__space-unit;
 }
+
+.archives-table{
+	padding-left: 0;
+	display: table;
+	margin: 0 auto;
+}
+.archives-cat ul{
+	padding-left: 0;
+	list-style: none;
+}
+.archives-cat  li {
+	padding-left: 0;
+	display: inline;
+}
+
+// .archives-cat li .categories{
+// 	font-size: $base__font-size;
+// }
+.archives-cat{
+	padding-left: 0;
+}
+
+.archives-tags{
+	margin-bottom: 1rem;
+}

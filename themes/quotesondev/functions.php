@@ -57,11 +57,33 @@ add_filter( 'stylesheet_uri', 'qod_minified_css', 10, 2 );
  */
 function qod_scripts() {
 	wp_enqueue_style( 'qod-style', get_stylesheet_uri() );
-
+	wp_enqueue_style( 'qod-style', "https://use.fontawesome.com/releases/v5.7.2/css/all.css" );
+	// wp_enqueue_scripts('qod-starter', get_template_directory_uri() . '/build/js/app.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'qod-starter', get_template_directory_uri() . '/build/js/app.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'qod-starter-navigation', get_template_directory_uri() . '/build/js/navigation.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'qod-starter-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20151215', true );
+	wp_localize_script('qod-starter', 'magicalData', array(
+		'nonce' => wp_create_nonce('wp_rest'),
+		'siteURL' => get_site_url()
+	));
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
+
+    		
+// function search_filter($query) {
+// 	if ( !is_admin() && $query->is_main_query() ) {
+// 	  if ($query->is_search) {
+// 		$query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
+// 		$query->set('posts_per_page',1);
+// 	  }
+// 	}
+//   }
+// add_filter('hook', 'search_filter');
+
+// function add_allowed_origins($origins) {
+//     $origins[] = 'http://localhost/project5-quotes-on-dev/wordpress/';
+//     return $origins;
+// }
 
 /**
  * Custom functions that act independently of the theme templates.

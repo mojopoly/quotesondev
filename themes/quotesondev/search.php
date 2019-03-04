@@ -15,11 +15,15 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
+			<?php
+    		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;?>
 
-			<?php /* Start the Loop */ ?>
+        <div id="result_search">
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'search' ); ?>
+
 
 			<?php endwhile; ?>
 

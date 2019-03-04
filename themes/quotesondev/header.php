@@ -23,13 +23,16 @@
 			<header id="masthead" class="site-header" role="banner">
 				<div class="site-branding">
 					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<div class= site-title-container>
+						<h1 class="site-title-1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">quotes</a></h1>
+						<h1 class="site-title-2"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> on</a></h1>
+						<h1 class="site-title-3"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> dev_</a></h1>
+					</div>
+
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
+
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
